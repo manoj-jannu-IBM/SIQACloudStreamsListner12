@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">CloudStreamsListener</value>
+  <value name="node_subtype">Streaming</value>
+  <value name="node_nsName">SIQACloudtreamsListner12.Listners:connector_listener12</value>
+  <value name="node_pkg">SIQACloudStreamsListner12</value>
+  <value name="node_comment"></value>
+  <value name="is_public">false</value>
+  <value name="cloudNodeVersion">1</value>
+  <record name="cloudNodeProperties" javaclass="com.wm.util.Values">
+    <value name="providerName">WmSalesforceProvider</value>
+    <value name="connectorID">com.webmethods.cloudstreams.salesforce_v53</value>
+    <value name="connectionAlias">SIQACloudtreamsListner12.connectors:SFListner12</value>
+    <value name="listenerName">SalesforcePushTopicEvent</value>
+    <value name="connectionType">bayeux_http_long_polling</value>
+    <record name="connectionGroupProperties" javaclass="com.wm.util.Values">
+      <value name="hp.endpoint">https://{instance}.salesforce.com/cometd/53.0</value>
+      <value name="bu.backoffIncrement">1000</value>
+      <value name="bu.maxBackoff">30000</value>
+      <value name="bu.maxMessageSize">1051576</value>
+      <value name="cx.replayOptions">NEW</value>
+      <value name="cx.customeService"></value>
+      <value name="cx.specificReplayID">-1</value>
+      <value name="eh.isEnabled">true</value>
+      <value name="eh.errorHandlerServiceName">wmSalesforceConnector_v53_1.util.listener.services:listenerErrorHandler</value>
+      <value name="eh.retryCount">3</value>
+      <value name="eh.callbackServiceName">wmSalesforceConnector_v53_1.util.listener.services:listenerCallBackService</value>
+      <value name="eh.runAsUser"></value>
+    </record>
+    <record name="subscriber" javaclass="com.wm.util.Values">
+      <value name="name">PushTopic Subscriber</value>
+      <value name="displayName">Push Topic Subscriber</value>
+      <null name="method"/>
+      <value name="path">/topic/{pushTopicName}</value>
+      <array name="headers" type="record" depth="1">
+      </array>
+      <array name="parameters" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="name">pushTopicName</value>
+          <value name="dataType">String</value>
+          <value name="type">URI_CONTEXT</value>
+          <value name="defaultValue">TestAccount</value>
+          <value name="description">PushTopic name</value>
+          <value name="isRequired">true</value>
+          <value name="isActive">true</value>
+          <value name="isFixed">false</value>
+          <value name="isCustom">false</value>
+          <value name="encodingScope">path</value>
+        </record>
+      </array>
+    </record>
+    <record name="event" javaclass="com.wm.util.Values">
+      <value name="namespace">wmSalesforceConnector_v53_1.document.listener:pushTopicEventResponse</value>
+      <value name="clusterMode">multiNode</value>
+      <record name="action" javaclass="com.wm.util.Values">
+        <record name="service" javaclass="com.wm.util.Values">
+          <value name="name">SIQACloudtreamsListner12.services:ListnerService</value>
+          <value name="syncMode">false</value>
+          <value name="runAsUser">Default</value>
+        </record>
+        <null name="log"/>
+      </record>
+    </record>
+    <value name="enabled">false</value>
+    <number name="connectionNodeVersion" type="Integer">1</number>
+  </record>
+</Values>
