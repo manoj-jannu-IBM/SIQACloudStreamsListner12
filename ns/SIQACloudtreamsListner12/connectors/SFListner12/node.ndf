@@ -34,7 +34,7 @@
       <value name="cn.enableCompression">false</value>
       <value name="cn.enableSNI">true</value>
       <value name="cn.sniServerName"></value>
-      <value name="cr.username">cspro@softwareag.com</value>
+      <value name="cr.username">vidi@softwareag.com</value>
       <value name="cr.password">SIQACloudtreamsListner12.connectors:SFListner12.cr.password</value>
       <value name="cr.authSchemeType">none</value>
       <value name="cr.preemptiveAuthEnabled">false</value>
